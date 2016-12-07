@@ -24,6 +24,19 @@ config TOUCHSCREEN_DUMMY
 	default n
 	---help---
 	  This enables support for ODROID default Touch panel
+	  
+config TOUCHSCREEN_USBIRTOUCH_MT
+		tristate "IRTOUCH USB Touchscreen Driver For multi point"
+		depends on USB_ARCH_HAS_HCD
+		select USB
+		help
+	  	  Say Y here if you have a IRTOUCH based touchscreen
+	  	  controller.
+
+	  	  If unsure, say N.
+
+	  	  To compile this driver as a module, choose M here: the
+	  	  module will be called irtouch.
 
 config TOUCHSCREEN_SOLOMON_MT
 	bool "Solomon 10.1\" WXGA multi touch panel(I2C Driver)"
